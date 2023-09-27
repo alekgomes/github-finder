@@ -1,0 +1,12 @@
+.user-details {
+  background-color: red;
+  padding: 1rem 1.2rem;
+}
+
+.user-details__column {}
+
+.user-details__avatarImg {
+  border-radius: 50%;
+}
+
+.user-details__login{}

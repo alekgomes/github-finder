@@ -8,7 +8,7 @@ const RepoDetails = () => {
       <div>RepoDetails</div>
       <Link to="/">Home</Link>
     </>
-  )
+  ) 
 }
 
 export default RepoDetails

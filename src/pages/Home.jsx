@@ -1,35 +1,45 @@
-import { useState } from "react"
 import { Link } from "react-router-dom"
-import fetchUser from "../services/fetchUser"
+import fetchUserRepos from "../services/fetchUserRepos"
+import fetchUserInfo from "../services/fetchUserInfo"
+import { useUserContext } from "../contexts/userContext"
+import UserDetails from "../components/UserDetails"
 
 const Home = () => {
-  const [user, setUser] = useState("")
-  const [userRepos, setUserRepos] = useState([])
+  const { user, setUser } = useUserContext()
 
   const onChange = (e) => {
-    setUser(e.target.value)
+    setUser({ ...user, name: e.target.value })
   }
 
   const handleFetch = async () => {
-    const repos = await fetchUser(user)
-    setUserRepos(repos)
-  }
+    const [repos, info] = await Promise.all([
+      fetchUserRepos(user.name),
+      fetchUserInfo(user.name),
+    ])
 
-  console.log(userRepos)
+    setUser({ ...user, repos, info })
+  }
 
   return (
     <>
-      <div>Home</div>
       <input
         type="text"
-        value={user}
+        value={user.name}
         name="user"
         id="user"
         onChange={onChange}
+        placeholder="Pesquisar usuário..."
       />
       <button onClick={handleFetch}>Pesquisar</button>
 
-      <Link to="/alekgomes/adopt-me">Detalhes</Link>
+      {Object.keys(user.info).length > 0 && <UserDetails info={user.info} />}
+
+      {user.repos.length > 0 &&
+        user.repos.map((repo) => (
+          <Link key={repo.id} to={`/${user.name}/${repo.name}`}>
+            Detalhes
+          </Link>
+        ))}
     </>
   )
 }
