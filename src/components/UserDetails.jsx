@@ -1,36 +1,76 @@
-import styles from "./UserDetails.module.css"
-import { ReactComponent as Follow } from "../assets/follow.svg"
+import PropTypes from "prop-types"
+import styles from "./UserDetails.module.scss"
+import { Follow, Twitter, Link, Email } from "./icons"
 
 function UserDetails({ info }) {
+  const {
+    userDetails,
+    userDetails__avatarImg,
+    userDetails__name,
+    userDetails__login,
+  } = styles
+
   return (
-    <div className={styles.userDetails}>
-      <div className={styles.userDetails__column}>
-        <img
-          src={info.avatar_url}
-          alt="User avatar"
-          className={styles.userDetails__avatarImg}
-        />
-        <p className={styles.userDetails__avatarImg}>{info.name}</p>
-        <p className={styles.userDetails__avatarImg}>{info.login}</p>
+    <div className={userDetails}>
+      <div>
+        <a href={info.html_url}>
+          <img
+            src={info.avatar_url}
+            alt="User avatar"
+            className={userDetails__avatarImg}
+          />
+        </a>
       </div>
-      <div className={styles.userDetails__column}>
-        <p>
-          <Follow /> {info.followers} - Seguidores . {info.following} seguindo
-        </p>
-      </div>
-      <div className={styles.userDetails__column}>
-        <p>{info.bio}</p>
-        <p>
-          <span>{info.email}</span>
-          <span>{info.blog}</span>
-          <span>{info.twitter_username}</span>
-        </p>
-        <p>
-          Desde: {new Intl.DateTimeFormat(new Date(info.created_at)).format()}
-        </p>
+      <div>
+        <div>
+          <p className={userDetails__name}>{info.name}</p>
+          <p className={userDetails__login}>{info.login}</p>
+        </div>
+        <div>
+          <p>
+            <Follow />
+            <span>
+              {info.followers} - Seguidores . {info.following} seguindo
+            </span>
+          </p>
+        </div>
+        <div>
+          <p>{info.bio}</p>
+        </div>
+        <div>
+          <p>
+            {info.email && (
+              <p>
+                <Email />
+                {info.email}
+              </p>
+            )}
+            {info.blog && (
+              <p>
+                <Link />
+                {info.blog}
+              </p>
+            )}
+            {info.twitter_username && (
+              <p>
+                <Twitter />@{info.twitter_username}
+              </p>
+            )}
+          </p>
+          <p>
+            <small>
+              No GitHub desde:{" "}
+              {new Intl.DateTimeFormat(new Date(info.created_at)).format()}
+            </small>
+          </p>
+        </div>
       </div>
     </div>
   )
 }
 
 export default UserDetails
+
+UserDetails.propTypes = {
+  info: PropTypes.object,
+}

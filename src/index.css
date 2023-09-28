@@ -1,11 +1,12 @@
 :root {
+  --text-color:rgba(255, 255, 255, 0.87);
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-size: 1.125rem;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--text-color);
   background-color: #242424;
 
   font-synthesis: none;
@@ -13,6 +14,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -69,7 +76,7 @@ button:focus-visible {
   }
 }
 
-img, svg {
+img{
   max-width: 100%;
   display: block;
 }
