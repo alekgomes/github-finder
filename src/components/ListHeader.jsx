@@ -5,7 +5,7 @@ import styles from "./ListHeader.module.scss"
 import clsx from "clsx"
 
 const ListHeader = () => {
-  const { listHeader, sortButton, star, upArrow, downArrow, active } = styles
+  const { listHeader, sortButton, star, downArrow, active } = styles
   const { toggleSorting, sortState } = useUserContext()
 
   return (
@@ -19,7 +19,7 @@ const ListHeader = () => {
           onClick={toggleSorting}
           className={clsx({ [active]: sortState === "ASC" })}
         >
-          <Arrow className={upArrow} />
+          <Arrow />
         </span>
         <span
           onClick={toggleSorting}

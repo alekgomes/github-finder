@@ -18,6 +18,7 @@ const Home = () => {
       fetchUserRepos(user.name),
       fetchUserInfo(user.name),
     ])
+
     setUser({ ...user, repos, info })
   }
 
