@@ -4,6 +4,7 @@ import { useUserContext } from "../contexts/userContext"
 import UserDetails from "../components/UserDetails"
 import RepositoryList from "../components/RepositoryList"
 import RepositoryItem from "../components/RepositoryItem"
+import ListHeader from "../components/ListHeader"
 
 const Home = () => {
   const { user, setUser } = useUserContext()
@@ -17,7 +18,6 @@ const Home = () => {
       fetchUserRepos(user.name),
       fetchUserInfo(user.name),
     ])
-
     setUser({ ...user, repos, info })
   }
 
@@ -37,7 +37,7 @@ const Home = () => {
 
       {user.repos.length > 0 && (
         <>
-          <h2>Lista de repositórios</h2>
+          <ListHeader />
           <RepositoryList>
             {user.repos.map((repo) => (
               <RepositoryItem key={repo.id} user={user} repo={repo} />

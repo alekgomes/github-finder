@@ -38,7 +38,7 @@ function UserDetails({ info }) {
           <p>{info.bio}</p>
         </div>
         <div>
-          <p>
+          <div>
             {info.email && (
               <p>
                 <Email />
@@ -56,11 +56,13 @@ function UserDetails({ info }) {
                 <Twitter />@{info.twitter_username}
               </p>
             )}
-          </p>
+          </div>
           <p>
             <small>
-              No GitHub desde:
-              {new Intl.DateTimeFormat(new Date(info.created_at)).format()}
+              <span>
+                No GitHub desde:{" "}
+                {new Intl.DateTimeFormat(new Date(info.created_at)).format()}
+              </span>
             </small>
           </p>
         </div>
