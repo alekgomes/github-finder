@@ -59,7 +59,7 @@ function UserDetails({ info }) {
           </p>
           <p>
             <small>
-              No GitHub desde:{" "}
+              No GitHub desde:
               {new Intl.DateTimeFormat(new Date(info.created_at)).format()}
             </small>
           </p>
