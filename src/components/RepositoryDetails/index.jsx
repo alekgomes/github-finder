@@ -1,8 +1,6 @@
 import PropTypes from "prop-types"
 import styles from "./RepositoryDetails.module.scss"
-import Fork from "./icons/Fork"
-import Stars from "./icons/Stars"
-import Watchers from "./icons/Watchers"
+import { Fork, Stars, Watchers } from "@icons"
 
 const RepositoryDetails = ({ repo }) => {
   const { repositoryDetails, projectName, projectData, projectDescription } =

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-import { useUserContext } from "../contexts/userContext"
+import { useUserContext } from "@contexts/userContext"
 import styles from "./SearchUser.module.scss"
 
 const SearchUser = ({ handleFetch }) => {

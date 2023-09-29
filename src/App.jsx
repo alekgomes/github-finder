@@ -3,7 +3,7 @@ import './App.css'
 import { Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
 import RepoDetails from "./pages/RepoDetails"
-import { UserContextProvider } from "./contexts/userContext"
+import { UserContextProvider } from "@contexts/userContext"
 
 function App() {
 

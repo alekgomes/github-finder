@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 import styles from "./UserDetails.module.scss"
-import { Follow, Twitter, Link, Email } from "./icons"
+import { Follow, Twitter, Link, Email } from "@icons"
 
 function UserDetails({ info }) {
   const {

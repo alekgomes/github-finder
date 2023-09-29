@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 import styles from "./RepositoryItem.module.scss"
-import Stars from "./icons/Stars"
+import { Stars } from "@icons"
 
 const RepositoryItem = ({ user, repo }) => {
   const { repositoryItem } = styles

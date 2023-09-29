@@ -1,10 +1,9 @@
 import { Link, useParams } from "react-router-dom"
-import { useUserContext } from "../contexts/userContext"
-import RepositoryDetails from "../components/RepositoryDetails"
+import { useUserContext } from "@contexts/userContext"
+import { RepositoryDetails } from "@components"
 import { useEffect, useState } from "react"
-import fetchRepoDetails from "../services/fetchRepoDetails"
-import fetchUserInfo from "../services/fetchUserInfo"
-import fetchUserRepos from "../services/fetchUserRepos"
+import { fetchRepoDetails, fetchUserInfo, fetchUserRepos } from "@services"
+
 
 const RepoDetails = () => {
   const params = useParams()

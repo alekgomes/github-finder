@@ -1,6 +1,5 @@
-import { useUserContext } from "../contexts/userContext"
-import Arrow from "./icons/Arrow"
-import Stars from "./icons/Stars"
+import { useUserContext } from "@contexts/userContext"
+import { Arrow, Stars } from "@icons"
 import styles from "./ListHeader.module.scss"
 import clsx from "clsx"
 

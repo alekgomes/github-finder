@@ -1,12 +1,13 @@
-import fetchUserRepos from "../services/fetchUserRepos"
-import fetchUserInfo from "../services/fetchUserInfo"
-import { useUserContext } from "../contexts/userContext"
-import UserDetails from "../components/UserDetails"
-import RepositoryList from "../components/RepositoryList"
-import RepositoryItem from "../components/RepositoryItem"
-import ListHeader from "../components/ListHeader"
-import SearchUser from "../components/SearchUser"
 import { useState } from "react"
+import { fetchUserRepos, fetchUserInfo } from "@services"
+import { useUserContext } from "@contexts/userContext"
+import {
+  UserDetails,
+  RepositoryList,
+  RepositoryItem,
+  ListHeader,
+  SearchUser,
+} from "@components"
 
 const Home = () => {
   const { user, setUser } = useUserContext()
@@ -23,6 +24,7 @@ const Home = () => {
       setError({ hasError: false })
     } catch (error) {
       setError({ hasError: true, message: error.message })
+      setUser({ ...user, repos: [], info: {} })
       console.error(error)
     }
   }
