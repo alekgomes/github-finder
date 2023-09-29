@@ -1,0 +1,12 @@
+.search-user {
+
+  input {
+    line-height: 2.6;
+  }
+  
+  & > * {
+    display: block;
+    margin-inline: auto;
+    margin-top: 12px;
+  }
+}

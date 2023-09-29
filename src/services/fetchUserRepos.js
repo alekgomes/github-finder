@@ -3,8 +3,15 @@ const sortByStars = (repos) =>
 
 const fetchUserRepos = (query) => {
   return fetch(`https://api.github.com/users/${query}/repos`)
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`GitHub API Request Failed: ${response.status}`)
+      }
+      return response.json()
+    })
     .then((repos) => sortByStars(repos))
-    .catch((error) => console.error("Error:", error))
+    .catch((error) => {
+      throw new Error(error)
+    })
 }
 export default fetchUserRepos

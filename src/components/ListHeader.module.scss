@@ -7,9 +7,12 @@
   margin-inline: auto;
   margin-top: 1.2rem;
 
-  span {
-    padding: 8px 6px;
+  span:not(:first-child) {
     cursor: pointer;
+  }
+
+  span {
+    padding: 8px 6px;    
     background-color: #1a1a1a;
     display: inline-block;
 
@@ -40,6 +43,7 @@
 
 .star {
   fill: var(--text-color);
+  
 }
 
 .down-arrow {
