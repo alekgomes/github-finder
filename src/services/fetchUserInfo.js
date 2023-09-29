@@ -1,8 +1,10 @@
+import errorHandling from "./errorHandling"
+
 const fetchUserInfo = (query) => {
   return fetch(`https://api.github.com/users/${query}`)
     .then((response) => {
       if (!response.ok) {
-        throw new Error(`GitHub API Request Failed: ${response.status}`)
+        errorHandling(response)
       }
       return response.json()
     })
