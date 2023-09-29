@@ -13,7 +13,8 @@ const Home = () => {
   const { user, setUser } = useUserContext()
   const [error, setError] = useState({ hasError: false, message: "" })
 
-  const handleFetch = async () => {
+  const handleFetch = async (e) => {
+    e.preventDefault()
     try {
       const [repos, info] = await Promise.all([
         fetchUserRepos(user.name),

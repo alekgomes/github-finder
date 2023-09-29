@@ -9,16 +9,20 @@ const SearchUser = ({ handleFetch }) => {
   const onChange = (e) => {
     setUser({ ...user, name: e.target.value })
   }
+
+  // Using <form> so the user can press enter to send request
   return (
     <div className={searchUser}>
-      <input
-        type="text"
-        value={user.name}
-        name="user"
-        id="user"
-        onChange={onChange}
-        placeholder="Pesquisar usuário..."
-      />
+      <form onSubmit={handleFetch}>
+        <input
+          type="text"
+          value={user.name}
+          name="user"
+          id="user"
+          onChange={onChange}
+          placeholder="Pesquisar usuário..."
+        />
+      </form>
       <button onClick={handleFetch}>Pesquisar</button>
     </div>
   )

@@ -1,6 +1,6 @@
 .repository-list {
   display: grid;  
-  grid-template-columns: repeat(auto-fit, minmax(380px, 3fr));
+  grid-template-columns: repeat(auto-fit, minmax(calc(380px - 5rem), 3fr)); // 380px - lateral padding for small screens
   gap: 1.2rem;
   margin-top: 1.6rem;
 }
