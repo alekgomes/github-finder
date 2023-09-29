@@ -1,10 +1,12 @@
 import PropTypes from "prop-types"
 import { createContext, useContext, useState } from "react"
 
+export const emptyUser = { name: "", repos: [], info: {} }
+
 const UserContext = createContext(null)
 
 export function UserContextProvider({ children }) {
-  const [user, setUser] = useState({ name: "", repos: [], info: {} })
+  const [user, setUser] = useState(emptyUser)
   const [sortState, setSortState] = useState("DESC")
   const toggleSorting = () => {
     setUser({ ...user, repos: user.repos.reverse() })

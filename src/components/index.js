@@ -1,4 +1,5 @@
 export { default as ListHeader } from "./ListHeader"
+export { default as Loader } from "./Loader"
 export { default as RepositoryDetails } from "./RepositoryDetails"
 export { default as RepositoryItem } from "./RepositoryItem/inedx"
 export { default as RepositoryList } from "./RepositoryList"
