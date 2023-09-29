@@ -1,8 +1,23 @@
-# React + Vite
+# Github Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project provides a way for the user to search a Github user, see some informations about him and the user's public repositories. You can also click in a repository to check out it's details page.
 
-Currently, two official plugins are available:
+### Running Locally
+To run locally, you need:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1 - clone this repository
+
+2 - install the dependencies
+
+3 - run the dev command
+
+---
+### Tech stack
+- [React](https://react.dev/) as UI Library
+
+- CSS modules as style manager
+
+- [React Router Dom](https://reactrouter.com/en/main) as router
+
+- [Vite](https://vitejs.dev/) as bundler
+
