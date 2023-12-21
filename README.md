@@ -1,8 +1,11 @@
 # Github Finder
 
+#### Video Demo:  https://youtu.be/uHvcghtB_ws
+
+#### Description:
 This project provides a way for the user to search a Github user, see some informations about him and the user's public repositories. You can also click in a repository to check out it's details page.
 
-### Running Locally
+#### Running Locally
 To run locally, you need:
 
 1 - clone this repository
